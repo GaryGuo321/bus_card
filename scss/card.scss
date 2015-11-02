@@ -1,0 +1,164 @@
+@import 'reset';
+//用于设置宽高和字体大小
+$size:1px;
+//用于设置盒模型
+$style:1px;
+
+$grey:#e4e4e4;
+$green:#3a884c;
+$white:#fff;
+$green-normal:#b7d54f;
+$red:#ef1f1f;
+
+$top:top;
+$left:left;
+$right:right;
+$bottom:bottom;
+
+.relative{
+	position:relative;
+}
+.absolute{
+	position:absolute;
+}
+.float-left{
+	float:left;
+}
+.bus-card{
+	@extend .relative;
+	width:$size*450;
+	margin:20px auto;
+}
+.post--middle{
+	@extend .float-left;
+}
+.station-name{
+	@extend .relative;
+	width:$size * 350;
+	height:$size * 70;
+	border: $size * 8 solid;
+	border-color:darken($grey,20%) darken($grey,10%);
+	background-color:$green;
+	p{
+		text-align: center;
+		font-weight: bold;
+	}
+	.station-name__china{
+		font-size: $size*32;
+		margin-#{$top}:$style*8;
+	}
+	.station-name__en{
+		font-size: $size*15;
+		margin-#{$top}:$style*3;
+	}
+}
+
+.bus-message{
+	width:$size*340;
+	height:$size*430;
+	border:$size*13 solid $green;
+	margin-#{$top}:$style*20;
+	.bus-message__frame{
+		width:100%;
+		height:$size*70;
+		background-color: $white;
+		border-#{$bottom}:$size*13 solid $green;
+		.bus-message__frame__left{
+			width:25%;
+			height:$size*73;
+			background-color:darken($green,18%);
+			@extend .float-left;
+		}
+		.bus-message__frame__right{
+			width:75%;
+			height:$size*73;
+			background-color:$green-normal;
+			@extend .float-left;
+		}
+	}
+}
+.bus-message__frame__right{
+	ul{
+		width:100%;
+		display: -webkit-box;
+	    display: -moz-box;
+	    display: -ms-box;
+	}
+	li{
+		// width:$size*12;
+		@extend .float-left;
+		-webkit-box-flex: 1;
+		-moz-box-flex: 1;
+		-ms-box-flex: 1;
+		z-index:1000;
+		@extend .relative;
+	}
+	[value="red"]{
+		color:$red;
+	}
+}
+.bus-message__frame__left{
+	ul{
+		margin-#{$top}:$style*2; 
+	}
+	[data-name="bus"]{
+		color:$green-normal;
+		font-size: $size*16;
+		font-weight: bold;
+		width:$size*32;
+		display:inline-block;
+		margin-#{$left}:$style*2; 
+	}
+	[data-name="num"]{
+		color:$white;
+		font-size: $size*26;
+	}
+	[data-name="next"]{
+		color:$red;
+		display:block;
+		text-align: center;
+		margin-#{$top}:$style*2;
+	}
+	[data-name="where"]{
+		display:block;
+		text-align: center;
+		color:$green-normal;
+		margin-#{$top}:$style*2;
+	}
+}
+.modification-square{
+	width:$size*366;
+	height:$size*60;
+	background-color:darken($grey,12%);
+	margin-#{top}:$style*15;
+}
+.modification-ellipse{
+	width:$size*366;
+	height:$size*60;
+	border-radius:50% ;
+	background-color:$white;
+	@extend .absolute;
+	top:$style*605;
+}
+
+.post--left{
+	width:$size*33;
+	height:$size*810;
+	@extend .float-left;
+	background-color:darken($grey,10%);
+	border-top-left-radius: 5px;
+}
+
+.post--right{
+	@extend .post--left;
+	border-top-right-radius : 5px;
+	border-top-left-radius: 0;
+}
+
+
+
+
+
+
+
+
